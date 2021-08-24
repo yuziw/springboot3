@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript" src="js/axios.min.js"></script>
+<script type="text/javascript">
+    //创建axios的配置对象
+    var newaxios=axios.create({
+        baseURl:"http://localhost:8989/"
+    });
+    //创建请求拦截器
+    newaxios.interceptors.request.use(function (config) {
+            return config;
+    });
+    alert("进入请求拦截器");
+    alert(r)
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="aa">
+    <input type="text" v-module="context">
+    <input type="button" @click="add" value="添加备忘录">
+    <ul>
+        <li v-for="item,index in msgs" key="index">{{item}}
+        <a href="javascript:;" @click="delete1(index)">删除</a>
+        </li>
+    </ul>
+    <ul v-show="msgs.length==0">
+        <li>暂无数据</li>
+    </ul>
+    <h1>总条数 {{msgs.length}}</h1>
+</div>
+
+</body>
+</html>
+<script type="text/javascript" src="js/vue-mini.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el:"#aa",
+        data:{
+            msgs:["12","22","32"],
+            context:""
+        },
+        methods:{
+            add(){
+                this.msgs.push(this.msgs);
+            },
+            delete1(index){
+                this.msgs.splice(index,1);
+            }
+        }
+
+    });
+</script>
